@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test_svm_rotation.api;
+package api;
 
 import org.opencv.core.Mat;
 
 
 public interface Processs {
-    public void processImage(Mat image);
+    public void processImage(Mat image, String path);
     public Result getResult();
 }

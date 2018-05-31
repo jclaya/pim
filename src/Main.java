@@ -18,7 +18,7 @@ public class Main {
         
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         
-        String method = "pre_process"; //TODO: change this to switch method
+        String method = "contour_perspective_transform"; //TODO: change this to switch method
         String pim_root_path = "C:\\Users\\jhance\\Documents\\NetBeansProjects\\pim\\"; //TODO: put path of the pim here
         
         switch(method) {
@@ -27,6 +27,9 @@ public class Main {
                 break;
             case "features_matching_with_masking":
                 new features_matching_with_masking.FeaturesMatchingMaskingMain().start(pim_root_path);
+                break;
+            case "contour_perspective_transform":
+                new contour_perspective_transform.ContourMain().start(pim_root_path);
                 break;
         }
         

@@ -1,9 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license header, choose License Headers in Project Prop
+erties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test_svm_rotation.api;
+package api;
 
 import java.util.List;
 import org.opencv.core.Mat;
@@ -29,8 +30,10 @@ public class Api implements Processs{
     }
 
     @Override
-    public void processImage(Mat query_image) {
-        Mat reference_image = Imgcodecs.imread("C:\\Users\\jhance\\Documents\\NetBeansProjects\\FinalBanknote\\src\\test_svm_rotation\\images\\ref_image_1.jpg");
+    public void processImage(Mat query_image, String path) {
+        Mat reference_image = Imgcodecs.imread(path);
+        
+        ImageManipulator.rescale(reference_image, (float)0.25, (float)0.25);
         
         MatOfKeyPoint query_features = object_detector.detectFeatures(query_image);
         MatOfKeyPoint ref_features = object_detector.detectFeatures(reference_image);
